@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cuis'Zen</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Importation de la police Poppins de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>{{recette_nom}} : Recette de {{recette_nom}}</title>
+    
+    <style>
+        body {
+            background-color: #cfe6ff;
+            color: #343a40;
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }    
+    
+        /* Navbar */
+        .navbar {
+            background-color: #f8f9fa !important;
+            border-bottom: 2px solid #343a40;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .navbar-brand {
+            color: #343a40 !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .navbar-toggler {
+            border: none !important;
+        }
+        .navbar-nav .nav-link {
+            color: #343a40 !important;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #007bff !important;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            background-color: transparent !important;
+            color: #6c757d !important;
+            font-weight: bold;
+        }
+        .breadcrumb .breadcrumb-item a {
+            color: #6c757d !important;
+        }
+        .breadcrumb .breadcrumb-item.active {
+            color: #343a40 !important;
+        }
+        
+        /* Header */
+        .display-3 {
+            color: #232874 !important;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px #ccc;
+        }
+        
+        /* Card */
+        .card {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Ajout d'un espace entre l'image et la card */
+        }
+        .card-img-top {
+            width: 500px;
+            height: auto;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin: 0 auto;
+        }
+        .card-img-top.bottom-rounded {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .card-body {
+            color: #343a40;
+        }
+        .list-unstyled.recipe-details { /* Nouvelle classe pour regrouper les details */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .list-unstyled li {
+            color: #6c757d;
+        }
+        .list-group-item {
+            color: #343a40;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Systeme de notation */
+        .rating-section {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .star {
+            font-size: 2rem;
+            color: #ffc107;
+            cursor: pointer;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #f39c12;
+        }
+
+        /* Style pour l'image */
+        .chef-img {
+            max-width: 100px;
+            margin-left: 20px;
+        }
+    </style>
+
+</head>
+<body style="background-color: #cfe6ff;">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top custom-navbar">
+    <a class="navbar-brand" href="/accueil" style="color: #343a40;">Cuis'Zen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+	<div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/1">Entrées</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/2">Plats</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/3">Desserts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/4">Boissons</a>
+            </li>
+        </ul>
+
+        <form class="form-inline" action="/chercherRecette" method="GET">
+            <input class="form-control mr-sm-2" type="search" name="nom_recette" placeholder="Recherche de recette" aria-label="Recherche de recette">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Rechercher</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container py-4">
+    <!-- FIL D'ARIANE -->
+    <div class="row">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="color: #6c757d;">
+                <li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{recette_nom}}</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header class="text-center my-5">
+            <h1 class="display-3">{{recette_nom}}</h1>
+        </header>
+        <div class="row mx-auto">
+            % for recette in LesRecettes:
+                <div class="col-lg-12 mb-4">
+                    <div class="card mb-3">
+                        <img class="card-img-top bottom-rounded" src="Images/{{recette.image}}" alt="Image">
+                        <div class="card-body">
+                            <ul class="list-unstyled recipe-details"> <!-- Ajout de la nouvelle classe -->
+                                <li><strong>Nombre de personnes :</strong> {{recette.nombreDePersonnes}}</li>
+                                <li><strong>Préparation :</strong> {{recette.preparation}} minutes</li>
+                                <li><strong>Cuisson :</strong> {{ recette.cuisson }} minutes</li>
+                                <li><strong>Difficulté :</strong> {{ recette.difficulte }}</li>
+                            </ul>
+                            <h3 class="mt-4"><strong>Ingrédients :</strong></h3>
+                            <ul class="list-group">
+                                % for ingredient in LesIngredients:
+                                    <li class="list-group-item">{{ ingredient.nom }} - {{ ingredient.quantite }} {{ ingredient.unite }}</li>
+                                % end
+                            </ul>
+                            <h3 class="mt-4"><strong>Etapes :</strong></h3>
+                            <ol class="list-group">
+                                % for etape in LesEtapes:
+                                    <li class="list-group-item">{{ etape.texte }}</li>
+                                % end
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            % end
+        </div>
+    </div>
+
+    <!-- Section de notation -->
+    <section class="rating-section py-4">
+        <div class="text-center">
+            <img class="chef-img" src="../Images/ChefPuzzles.png" alt="Chef Puzzles">
+            <h2 class="mb-0" style="color: #232874; font-weight: bold;">Rate us 5 stars !</h2> <!-- Modification ici -->
+        </div>
+        <div class="text-center">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+    </section>
+</div>
+
+<footer class="footer">
+    <p>Cuisiné avec amour par Cuis'Zen</p>
+    <p>Tous droits réservés Cuis'Zen.org - 2024</p>
+    <p><a href="/mentions-legales">Mentions légales</a> - <a href="/Conditions-Generales-Utilisation">Conditions Générales d'Utilisation</a> - <a href="/faq">FAQ</a></p>
+    <p>Pour des milliers de cocktails : 1001cocktails.com</p>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- JavaScript pour la notation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.star');
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(star.getAttribute('data-value'));
+                stars.forEach(s => {
+                    if (parseInt(s.getAttribute('data-value')) <= value) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
