@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/style.css">
+
+    <link rel="icon" href="Images/favicon.ico">
     <!-- Icônes Font Awesome (pour les réseaux sociaux) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-    <div class="top-bar"></div>
     <header>
         <nav class="navbar">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-mug-hot"></i> Cuis'Zen
-            </a>
+            <a href="/"><img src="Images/logo.png" alt="Cuis'zen Logo" class="nav-logo"></a>
+
+            <div class="burger-menu" id="burger">
+                <i class="fas fa-bars"></i>
+            </div>
             
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Recettes</a></li>
-                <li><a href="/about">À propos</a></li>
-            </ul>
-        
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input class="search-input" type="search" placeholder="Rechercher...">
+            <div class="navbar-collapse" id="navbarCollapse">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/recette">Recettes</a></li>
+                    <li><a href="/about">À propos</a></li>
+                </ul>
+            
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input class="search-input" type="search" placeholder="Rechercher...">
+                </div>
             </div>
         </nav>
     </header>
@@ -35,8 +40,7 @@
 
     <footer class="footer">
         <div class="footer-left">
-            <i class="fas fa-mug-hot"></i>
-            <span>Cuis'zen</span>
+            <a href="/"><img src="Images/logo.png" alt="Cuis'zen Logo" class="footer-logo"></a>
         </div>
         
         <div class="footer-right">

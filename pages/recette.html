@@ -1,47 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Cuis'Zen</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Importation de la police Poppins de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>{{recette_nom}} : Recette de {{recette_nom}}</title>
     
     <style>
-        body {
-            background-color: #cfe6ff;
-            color: #343a40;
-            font-family: 'Poppins', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }    
-    
-        /* Navbar */
-        .navbar {
-            background-color: #f8f9fa !important;
-            border-bottom: 2px solid #343a40;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        .navbar-brand {
-            color: #343a40 !important;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        .navbar-toggler {
-            border: none !important;
-        }
-        .navbar-nav .nav-link {
-            color: #343a40 !important;
-            font-weight: bold;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #007bff !important;
-        }
         
         /* Breadcrumb */
         .breadcrumb {
@@ -96,25 +55,6 @@
         .list-group-item {
             color: #343a40;
         }
-        
-        /* Footer */
-        .footer {
-            background-color: #007bff;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .footer a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer a:hover {
-            color: #ffffff;
-        }
 
         /* Systeme de notation */
         .rating-section {
@@ -144,37 +84,6 @@
         }
     </style>
 
-</head>
-<body style="background-color: #cfe6ff;">
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top custom-navbar">
-    <a class="navbar-brand" href="/accueil" style="color: #343a40;">Cuis'Zen</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-	<div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/1">Entrées</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/2">Plats</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/3">Desserts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/4">Boissons</a>
-            </li>
-        </ul>
-
-        <form class="form-inline" action="/chercherRecette" method="GET">
-            <input class="form-control mr-sm-2" type="search" name="nom_recette" placeholder="Recherche de recette" aria-label="Recherche de recette">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
-    </div>
-</nav>
 
 <div class="container py-4">
     <!-- FIL D'ARIANE -->
@@ -238,13 +147,6 @@
     </section>
 </div>
 
-<footer class="footer">
-    <p>Cuisiné avec amour par Cuis'Zen</p>
-    <p>Tous droits réservés Cuis'Zen.org - 2024</p>
-    <p><a href="/mentions-legales">Mentions légales</a> - <a href="/Conditions-Generales-Utilisation">Conditions Générales d'Utilisation</a> - <a href="/faq">FAQ</a></p>
-    <p>Pour des milliers de cocktails : 1001cocktails.com</p>
-</footer>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -270,6 +172,3 @@
         });
     });
 </script>
-
-</body>
-</html>

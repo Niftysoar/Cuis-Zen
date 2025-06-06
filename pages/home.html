@@ -1,57 +1,133 @@
-<div class="hero-scene">
-    <div class="hero-scene-content">
-        <h1>Laissez-vous inspirer, cuisinez avec passion et savourez des moments inoubliables à table.</h1>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-container">
+        <h1 class="title hero-title">Découvrez des recettes délicieuses</h1>
+        <p class="hero-subtitle">
+            Trouvez l'inspiration culinaire parmi nos milliers de recettes testées et approuvées
+        </p>
+            
+        <div class="hero-search-wrapper">
+            <input type="text" placeholder="Rechercher une recette..." class="hero-search-input">
+            <button class="hero-search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
     </div>
-</div>
+</section>
 
-<div class="container">
-    <section class="newsletter">
-        <div class="newsletter-header">
-            <h2>Newsletters gourmandes</h2>
-            <button class="subscribe-button">S'abonner</button>
+<section class="section-actu">
+  <div class="container">
+    <div class="header">
+      <h2 class="title actu-title">Actualités du jour</h2>
+      <a href="#" class="view-more">
+        Voir plus <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="actu-grid">
+      <!-- News Card 1 -->
+      <div class="actu-card">
+        <div class="image-container">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nouvelle tendance culinaire" />
+          <div class="actu-overlay">
+            <button class="read-button">Lire l'article</button>
+          </div>
         </div>
-    
-        <div class="newsletter-cards">
-            <div class="newsletter-card">
-                <img src="../Images/icone1.png" alt="Inspiration">
-                <p>Ne manquez plus d'inspiration</p>
-            </div>
-            <div class="newsletter-card">
-                <img src="../Images/icone2.png" alt="Idée repas">
-                <p>Sachez quoi manger ce soir</p>
-            </div>
-            <div class="newsletter-card">
-                <img src="../Images/icone3.png" alt="Nouveautés">
-                <p>Découvrez toutes nos nouveautés</p>
-            </div>
-            <div class="newsletter-card">
-                <img src="../Images/icone4.png" alt="Menu semaine">
-                <p>Ayez un menu tout prêt pour la semaine</p>
-            </div>
+        <div class="actu-content">
+          <div class="meta">
+            <span class="tag orange">Tendance</span>
+            <span class="dot">•</span>
+            <span>15 min de lecture</span>
+          </div>
+          <h3 class="news-title">Les nouvelles tendances culinaires de 2023</h3>
+          <p class="description">Découvrez les tendances qui révolutionnent les cuisines cette année, des ingrédients oubliés aux techniques innovantes.</p>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Auteur" />
+            <span>Par Marie Dupont</span>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <!-- News Card 2 -->
+      <div class="actu-card">
+        <div class="image-container">
+          <img src="Images/restaurant.jpg" alt="Restaurant étoilé" />
+          <div class="actu-overlay">
+            <button class="read-button">Lire l'article</button>
+          </div>
+        </div>
+        <div class="actu-content">
+          <div class="meta">
+            <span class="tag blue">Guide</span>
+            <span class="dot">•</span>
+            <span>8 min de lecture</span>
+          </div>
+          <h3 class="news-title">Les nouveaux restaurants étoilés en France</h3>
+          <p class="description">Le guide Michelin a dévoilé sa liste 2023. Découvrez les nouveaux établissements récompensés cette année.</p>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Auteur" />
+            <span>Par Jean Martin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- News Card 3 -->
+      <div class="actu-card">
+        <div class="image-container">
+          <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Alimentation durable" />
+          <div class="actu-overlay">
+            <button class="read-button">Lire l'article</button>
+          </div>
+        </div>
+        <div class="actu-content">
+          <div class="meta">
+            <span class="tag green">Durable</span>
+            <span class="dot">•</span>
+            <span>12 min de lecture</span>
+          </div>
+          <h3 class="news-title">Comment adopter une alimentation plus durable</h3>
+          <p class="description">Nos conseils pour réduire l'impact environnemental de votre assiette sans sacrifier le plaisir gustatif.</p>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Auteur" />
+            <span>Par Sophie Leroy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+    <div class="newsletter-container">
+        <h2 class="title newsletter-title">Recevez nos meilleures recettes</h2>
+        <p class="newsletter-description">
+            Abonnez-vous à notre newsletter pour recevoir chaque semaine des recettes exclusives et des conseils de chefs
+        </p>
+        <div class="newsletter-form">
+            <input type="email" placeholder="Votre email" class="newsletter-input">
+            <button class="newsletter-button">S'abonner</button>
+        </div>
+    </div>
     
+    <div class="newsletter-cards">
+        <div class="newsletter-card">
+            <img src="../Images/icone1.png" alt="Inspiration">
+            <p>Ne manquez plus d'inspiration</p>
+        </div>
+        <div class="newsletter-card">
+            <img src="../Images/icone2.png" alt="Idée repas">
+            <p>Sachez quoi manger ce soir</p>
+        </div>
+        <div class="newsletter-card">
+            <img src="../Images/icone3.png" alt="Nouveautés">
+            <p>Découvrez toutes nos nouveautés</p>
+        </div>
+        <div class="newsletter-card">
+            <img src="../Images/icone4.png" alt="Menu semaine">
+            <p>Ayez un menu tout prêt pour la semaine</p>
+        </div>
+     </div>
+</section>
 
-    <section class="contact" id="contact">
-         <div class="titre noir">
-             <h2 class="titre-text"><span>C</span>ontact</h2>
-             <p>Nous sommes la pour répondre a vos questions, recueillir vos commentaires et partager notre amour de la cuisine avec vous.</p>
-         </div>
-         <div class="contactform">
-             <h3>Envoyer un message</h3>
-             <div class="inputboite">
-                 <input type="text" placeholder="Nom">
-             </div>
-             <div class="inputboite">
-                <input type="text" placeholder="email">
-             </div>
-             <div class="inputboite">
-                <textarea placeholder="message"></textarea>
-             </div>
-             <div class="inputboite">
-                 <input type="submit" value="envoyer">
-             </div>
-         </div>
-     </section>
-
-</div>
+<script src="Scripts/DropMenu/script.js"></script>
